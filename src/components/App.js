@@ -1,10 +1,10 @@
-import '../css/App.css';
+import { useEffect, useState } from 'react';
 import KeysTable from './KeysTable';
 import KeyCreateForm from './KeyCreateForm';
-import { useEffect, useState } from 'react';
+import '../css/App.css';
 import axios from 'axios';
 
-const API_PORT = process.env.APP_PORT;
+const API_PORT = process.env.REACT_APP_API_PORT;
 
 function App() {
   const [keys, setKeys] = useState(null);
