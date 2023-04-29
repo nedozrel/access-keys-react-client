@@ -4,14 +4,14 @@ import KeyCreateForm from './KeyCreateForm';
 import '../css/App.css';
 import axios from 'axios';
 
-const API_PORT = process.env.REACT_APP_API_PORT;
+const API_URL = process.env.REACT_APP_API_URL;
 
 function App() {
   const [keys, setKeys] = useState(null);
 
   const fetchData = async () => {
     try {
-      const response = await axios.get(`http://localhost:${API_PORT}/api/keys`);
+      const response = await axios.get(`${API_URL}/api/keys`);
       setKeys(response.data);
     } catch (error) {
       console.error(error);
@@ -20,7 +20,7 @@ function App() {
 
   const deleteKey = async (keyId) => {
     try {
-      await axios.delete(`http://localhost:${API_PORT}/api/keys/${keyId}`);
+      await axios.delete(`${API_URL}/api/keys/${keyId}`);
       await fetchData();
     } catch (error) {
       console.error(error);
@@ -28,7 +28,7 @@ function App() {
   };
 
   const addKey = async (title, expiration) => {
-    await axios.post(`http://localhost:${API_PORT}/api/keys`, {
+    await axios.post(`${API_URL}/api/keys`, {
       title: title,
       expiresInHours: expiration,
     });
