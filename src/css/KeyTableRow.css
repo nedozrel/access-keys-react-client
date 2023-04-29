@@ -1,0 +1,15 @@
+.key_expired_true {
+  background-color: #ffc3c3;;
+}
+
+.key_expired_false {
+  background-color: #deffbc;
+}
+
+.key {
+  padding: 10px;
+}
+
+.key__delete-btn-cnt {
+  text-align: center;
+}
